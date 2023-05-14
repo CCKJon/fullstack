@@ -4,6 +4,7 @@
 	export let data;
 	let answer;
 	let title = data.title;
+	let description = '';
 	async function getTodo() {
 		const response = await fetch(`http://127.0.0.1:8000/api/todo/${title}`);
 		const data = await response.json();
@@ -25,8 +26,25 @@
 			});
 	}
 
-	async function updateTodo(description) {
-		const response = await fetch(`http://127.0.0.1:8000/api/todo/${title}`);
+	function updateTodo() {
+		fetch(`http://127.0.0.1:8000/api/todo/${title}?desc=${description}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				title: title,
+				desc: description
+			})
+		})
+			.then((response) => {
+				// Handle response
+
+				goto('/');
+			})
+			.catch((error) => {
+				// Handle error
+			});
 	}
 
 	onMount(async () => {
@@ -40,6 +58,14 @@
 {#if answer}
 	<div>{answer.description}</div>
 {/if}
+
+<div>This is where you can update your To-do</div>
+<form on:submit|preventDefault={updateTodo}>
+	New description:
+	<input type="text" bind:value={description} />
+
+	<button type="submit">Update To-do</button>
+</form>
 
 <div>Would you like to delete this To-Do?</div>
 <button on:click={deleteTodo}>Delete To-Do</button>

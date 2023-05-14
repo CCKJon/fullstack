@@ -12,3 +12,8 @@ Create a form that allows me to modify the description my todo
 
 Next ticket
 Style up my todo app so that it looks baller
+
+Bugs to look into:
+
+When a new todo is created and we are redirected to the home page, it is not automatically updated with the new todo.
+When a todo is deleted and we are redirected to the home page, it is not updated with the todo deleted.

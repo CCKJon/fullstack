@@ -11,3 +11,13 @@ const config = {
 };
 
 export default config;
+
+const sveltePreprocess = require('svelte-preprocess');
+
+module.exports = {
+	preprocess: sveltePreprocess({
+		postcss: true
+		// Add your Tailwind CSS configuration here:
+		// e.g., `tailwindcss: "./tailwind.config.js"`
+	})
+};

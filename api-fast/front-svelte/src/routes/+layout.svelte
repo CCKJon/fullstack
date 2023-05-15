@@ -1,6 +1,7 @@
 <script>
-	
+	import '../app.postcss';
 </script>
+
 <div class="app">
 	<main>
 		<slot />
@@ -10,7 +11,6 @@
 		<p>This is the footer of my test app with Svelte for the front and fastAPI for the back</p>
 	</footer>
 </div>
-
 
 <style>
 	.app {

@@ -59,7 +59,7 @@
 	<div>{answer.description}</div>
 {/if}
 
-<div>This is where you can update your To-do</div>
+<div class="text-red-800">This is where you can update your To-do</div>
 <form on:submit|preventDefault={updateTodo}>
 	New description:
 	<input type="text" bind:value={description} />

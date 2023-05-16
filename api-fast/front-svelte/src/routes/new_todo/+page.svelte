@@ -38,7 +38,7 @@
 	<input type="text" bind:value={title} />
 
 	Description:
-	<input type="text" bind:value={description} />
+	<input class="border border-gray-500" type="text" bind:value={description} />
 
 	<button type="submit">Create Todo</button>
 </form>
@@ -51,5 +51,5 @@
 </div>
 
 <div>
-	<a href="/">Home</a>
+	<a class="px-2 py-1 bg-blue-500 hover:bg-blue-300 text-white rounded-xl" href="/">Home</a>
 </div>

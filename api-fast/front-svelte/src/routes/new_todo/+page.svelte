@@ -23,7 +23,7 @@
 			.then((response) => {
 				// Handle response
 
-				goto('/');
+				window.location = '/';
 			})
 			.catch((error) => {
 				// Handle error
@@ -50,6 +50,9 @@
 	/>
 </div>
 
-<div>
-	<a class="px-2 py-1 bg-blue-500 hover:bg-blue-300 text-white rounded-xl" href="/">Home</a>
+<div class="mt-10">
+	<a
+		class="font-bold text-center grid place-item-center mx-auto px-2 py-1 bg-rose-default hover:bg-rose-darker text-white rounded-xl w-20"
+		href="/">Home</a
+	>
 </div>
